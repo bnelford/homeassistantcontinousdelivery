@@ -57,3 +57,7 @@ configuration files
 # Future Enhancements
 Raspberry Pi Image / Hass.io
 Better Verification steps
+Automatic Jenkins plugin installs
+Automatic jenkins credentials install?
+Automatic jenkins pipeline configuration
+Second pipeline to update the home-assistant docker image
