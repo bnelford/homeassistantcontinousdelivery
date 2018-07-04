@@ -47,25 +47,25 @@ While jenkins will run on docker, I had it running on a separate host
     * poll SCM every minute
     * run from Jenkins file at git address
 
-# Raspberry Pi Setup
+# 4. Raspberry Pi Setup
 0. On Rapsbian
 1. Install Docker
 2. install docker-compose
 
-# Pipeline Code
+# 5. Pipeline Code
 Jenkinsfile
 
-# Home Assistant Configuration
+# 6. Home Assistant Configuration
 configuration files
 
-# Config Update & Pipeline Execution
+# 7. Config Update & Pipeline Execution
 1. Clone repo
 2. Make config change
 3. Check in with comments, stage, sync
 4. Trigger build, or wait until poll triggers
 5. Watch execution
 
-# Future Enhancements
+# 8. Future Enhancements
 * Raspberry Pi Image / Hass.io
 * Better Verification steps
 * Automatic Jenkins plugin installs
