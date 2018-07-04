@@ -10,7 +10,8 @@ Continuous Delivery Instructions for Home Assistant running on a docker containe
 4. Raspberry Pi Setup
 5. Pipeline Code
 6. Home Assistant Configuration
-7. Future Enhancements
+7. Config Update & Pipeline Execution
+8. Future Enhancements
 
 # 1. Requirements
 
@@ -32,7 +33,7 @@ While jenkins will run on docker, I had it running on a separate host
     to pi
     to git repo
 8. setup 1st pipeline
-    poll SCM
+    poll SCM every minute
     run from Jenkins file at git address
 
 # Raspberry Pi Setup
@@ -45,6 +46,13 @@ Jenkinsfile
 
 # Home Assistant Configuration
 configuration files
+
+# Config Update & Pipeline Execution
+1. Clone repo
+2. Make config change
+3. Check in with comments, stage, sync
+4. Trigger build, or wait until poll triggers
+5. Watch execution
 
 # Future Enhancements
 Raspberry Pi Image / Hass.io
