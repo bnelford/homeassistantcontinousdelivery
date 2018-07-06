@@ -1,0 +1,12 @@
+version: '3'
+services:
+  Jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts
+    volumes:
+    #Windows mount
+      - c:/Users/<localUser>/jenkins-docker/jenkins_home:/var/jenkins_home
+    restart: always
+    ports:
+     - "8080:8080"
+     - "50000:50000"

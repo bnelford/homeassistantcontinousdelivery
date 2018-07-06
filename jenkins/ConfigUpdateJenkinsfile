@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploying') {
+            steps {
+                sshagent(['RBP3SSH']) {
+                    sh 'scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no home-assistant/configs/*.yaml pi@<<localIPAddress>>:~/homeassistant/'
+                    sh 'scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no home-assistant/docker-compose.yaml pi@<<localIPAddress>>:~/homeassistant/'
+                } 
+            }
+        }
+        stage('Verifying') {
+            steps {
+                sshagent(['RBP3SSH']) {
+                    sh 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<<localIPAddress>> stat /home/pi/homeassistant/*.yaml'
+                }                
+            }
+        }
+        stage('Restarting Services') {
+            steps {
+                sshagent(['RBP3SSH']) {
+                    sh 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@<<localIPAddress>> docker-compose -f /home/pi/homeassistant/docker-compose.yaml restart'
+                }                
+            }
+        }
+    }
+}

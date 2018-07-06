@@ -1,0 +1,32 @@
+irrigation:
+  name: Irrigation
+  icon: mdi:water-pump
+  view: true
+  entities:
+  - group.zones_front
+  - group.zones_back
+
+zones_front:
+  name: Front Yard
+  view: false
+  entities:
+  - switch.East_Park_Strip
+  - switch.East_Side_Yard_Grass
+  - switch.Front_Bubblers
+  - switch.Front_Grass_North_Zone
+  - switch.Front_Grass_South_Zone
+  - switch.Front_Park_Strip_Grass
+  - switch.West_Front_Grass
+
+zones_back:
+  name: Back Yard
+  view: false
+  entities:
+  - switch.Backyard_Middle
+  - switch.Backyard_North
+  - switch.Backyard_Northwest
+  - switch.Backyard_South
+  - switch.Backyard_West
+  - switch.West_Side_Grass
+  - switch.East_Side_Yard_Grass
+  - switch.Garden_Boxes
